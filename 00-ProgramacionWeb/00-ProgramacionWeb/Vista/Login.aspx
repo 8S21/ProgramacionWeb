@@ -8,16 +8,14 @@
     <title>Login</title>
 </head>
 <body>
-    <center>
-        <form id="form1" runat="server">
-            <div>
-                <label>Usuario</label><br>
-                <asp:TextBox ID="txtUsuario" runat="server" type="text" name="usuario" required="required"></asp:TextBox><br>
-                <label>Contraseña</label><br>
-                <asp:TextBox ID="txtPassword" runat="server" type="password" name="password" required="required"></asp:TextBox><br>
-                <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit"></asp:Button>
-            </div>
-        </form>
-    </center>
+    <form id="form1" runat="server">
+        <div style="text-align:center;">
+            <label>Usuario</label><br>
+            <asp:TextBox ID="txtUsuario" runat="server" type="text" name="usuario" required="required"></asp:TextBox><br>
+            <label>Contraseña</label><br>
+            <asp:TextBox ID="txtPassword" runat="server" type="password" name="password" required="required"></asp:TextBox><br>
+            <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit"></asp:Button>
+        </div>
+    </form>
 </body>
 </html>
