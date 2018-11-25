@@ -19,6 +19,24 @@ namespace _00_ProgramacionWeb.Vista
         protected void Entrar(object sender, EventArgs e)
         {
             Consultas con = new Consultas();
+            String usuario = txtUsuario.Text;
+            String password = txtPassword.Text;
+            if( con.LoginAdministrador( usuario, password ) )
+            {
+                Response.Write( "Eres Administrador" );
+            }
+            else if( con.LoginMaestro( usuario, password ) )
+            {
+                Response.Write( "Eres un Maestro" );
+            }
+            else if( con.LoginAlumno( usuario, password ) )
+            {
+                Response.Write( "Eres un alumno" );
+            }
+            else
+            {
+                Response.Write( "No estas registrado" );
+            }
         }
     }
 }

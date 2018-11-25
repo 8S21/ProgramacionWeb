@@ -18,22 +18,89 @@ namespace _00_ProgramacionWeb.Conexion
         {
             conexion = new MySqlConnection(cadena);
         }        
-        public Boolean Login( String usuario, String password )
-        {
-            Boolean estado = true;
+        public Boolean LoginAdministrador( String usuario, String password )
+        {            
             try
             {
                 conexion.Open();
+                String consulta = "select * from administrador where Usuario = @usuario and Password = @password";
+                MySqlCommand com = new MySqlCommand( consulta, conexion );
+                com.Parameters.AddWithValue( "@usuario", usuario );
+                com.Parameters.AddWithValue( "@password", password );
+                int count = Convert.ToInt32( com.ExecuteScalar() );
+                if( count == 0 )
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
-            catch( MySqlException e )
+            catch( MySqlException )
             {
-
+                return false;
             }
             finally
             {
-
+                conexion.Close();
             }
-            return estado;
+        }
+        public Boolean LoginMaestro( String usuario, String password )
+        {
+            try
+            {
+                conexion.Open();
+                String consulta = "select * from maestro where Usuario = @usuario and Password = @password";
+                MySqlCommand com = new MySqlCommand(consulta, conexion);
+                com.Parameters.AddWithValue("@usuario", usuario);
+                com.Parameters.AddWithValue("@password", password);
+                int count = Convert.ToInt32(com.ExecuteScalar());
+                if (count == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public Boolean LoginAlumno( String usuario, String password )
+        {
+            try
+            {
+                conexion.Open();
+                String consulta = "select * from alumno where Usuario = @usuario and Password = @password";
+                MySqlCommand com = new MySqlCommand(consulta, conexion);
+                com.Parameters.AddWithValue("@usuario", usuario);
+                com.Parameters.AddWithValue("@password", password);
+                int count = Convert.ToInt32(com.ExecuteScalar());
+                if (count == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch (MySqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
         }
     }
 }
