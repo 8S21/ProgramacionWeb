@@ -163,6 +163,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\RegistrarMaestro.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="Vista\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\RegistrarMaestro.aspx.cs">
+      <DependentUpon>RegistrarMaestro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\RegistrarMaestro.aspx.designer.cs">
+      <DependentUpon>RegistrarMaestro.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
