@@ -25,12 +25,13 @@ namespace _00_ProgramacionWeb.Vista
             String correo = txtCorreo.Text;
             String usuario = txtUsuario.Text;
             String password = txtPassword.Text;
-            if( con.RegistrarMaestro( nombre, apellido, materia, correo, usuario, password ) )
+            if (con.RegistrarMaestro(nombre, apellido, materia, correo, usuario, password))
             {
-                Response.Write( "Exito" );
+                Response.Write("Exito");
             }
             else
-            {
+            { }
+
                 Response.Write( "Error" );
             }
         }
