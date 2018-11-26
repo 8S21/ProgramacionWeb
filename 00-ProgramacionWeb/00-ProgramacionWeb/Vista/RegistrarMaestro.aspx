@@ -14,8 +14,6 @@
             <asp:TextBox ID="txtNombre" runat="server" type="text" name="nombre" required="required"></asp:TextBox><br>
             <asp:Label ID="Label2" runat="server" Text="Apellido"></asp:Label><br>
             <asp:TextBox ID="txtApellido" runat="server" type="text" name="apellido" required="required"></asp:TextBox><br>
-            <asp:Label ID="Label3" runat="server" Text="Materia"></asp:Label><br>
-            <asp:TextBox ID="txtMateria" runat="server" type="text" name="materia" required="required"></asp:TextBox><br>
             <asp:Label ID="Label4" runat="server" Text="Correo"></asp:Label><br>
             <asp:TextBox ID="txtCorreo" runat="server" type="text" name="correo" required="required"></asp:TextBox><br>
             <asp:Label ID="Label5" runat="server" Text="Usuario"></asp:Label><br>

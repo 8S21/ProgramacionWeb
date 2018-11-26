@@ -102,16 +102,15 @@ namespace _00_ProgramacionWeb.Conexion
                 conexion.Close();
             }
         }
-        public Boolean RegistrarMaestro( String nombre, String apellido, String materia, String correo, String usuario, String password )
+        public Boolean RegistrarMaestro( String nombre, String apellido, String correo, String usuario, String password )
         {
             try
             {
                 conexion.Open();
-                String consulta = "insert into maestro (Nombre, Apellido, Materia, Correo, Usuario, Password) values (@nombre,@apellido,@materia,@correo,@usuario,@password)";
+                String consulta = "insert into maestro (Nombre, Apellido, Correo, Usuario, Password) values (@nombre,@apellido,@correo,@usuario,@password)";
                 MySqlCommand com = new MySqlCommand(consulta, conexion);
                 com.Parameters.AddWithValue( "@nombre", nombre );
                 com.Parameters.AddWithValue( "@apellido", apellido );
-                com.Parameters.AddWithValue( "@materia", materia );
                 com.Parameters.AddWithValue( "@correo", correo );
                 com.Parameters.AddWithValue( "@usuario", usuario );
                 com.Parameters.AddWithValue( "@password", password );

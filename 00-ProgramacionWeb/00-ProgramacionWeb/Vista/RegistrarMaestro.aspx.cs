@@ -21,16 +21,15 @@ namespace _00_ProgramacionWeb.Vista
             Consultas con = new Consultas();
             String nombre = txtNombre.Text;
             String apellido = txtApellido.Text;
-            String materia = txtMateria.Text;
             String correo = txtCorreo.Text;
             String usuario = txtUsuario.Text;
             String password = txtPassword.Text;
-            if (con.RegistrarMaestro(nombre, apellido, materia, correo, usuario, password))
+            if (con.RegistrarMaestro(nombre, apellido, correo, usuario, password))
             {
                 Response.Write("Exito");
             }
             else
-            { }
+            { 
 
                 Response.Write( "Error" );
             }
