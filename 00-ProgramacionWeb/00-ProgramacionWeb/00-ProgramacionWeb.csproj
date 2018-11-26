@@ -162,7 +162,10 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Vista\Administrador.aspx" />
+    <Content Include="Vista\Alumno.aspx" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\Maestro.aspx" />
     <Content Include="Vista\RegistrarMaestro.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -218,12 +221,33 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Administrador.aspx.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Administrador.aspx.designer.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Alumno.aspx.cs">
+      <DependentUpon>Alumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Alumno.aspx.designer.cs">
+      <DependentUpon>Alumno.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Maestro.aspx.cs">
+      <DependentUpon>Maestro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Maestro.aspx.designer.cs">
+      <DependentUpon>Maestro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\RegistrarMaestro.aspx.cs">
       <DependentUpon>RegistrarMaestro.aspx</DependentUpon>

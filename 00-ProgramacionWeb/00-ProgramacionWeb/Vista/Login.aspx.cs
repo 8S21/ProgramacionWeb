@@ -13,7 +13,14 @@ namespace _00_ProgramacionWeb.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if( Request.Params["Mensaje"] != null )
+            {
+                String mensaje = Request.Params["Mensaje"];
+                if( mensaje == "1" )
+                {
+                    Response.Write("Debes de Iniciar Sesión");
+                }
+            }
         }
 
         protected void Entrar(object sender, EventArgs e)
@@ -23,20 +30,23 @@ namespace _00_ProgramacionWeb.Vista
             String password = txtPassword.Text;
             if( con.LoginAdministrador( usuario, password ) )
             {
-                Response.Write( "Eres Administrador" );
+                Session["Usuario"] = usuario;
+                Response.Redirect( "Administrador.aspx" );
             }
             else if( con.LoginMaestro( usuario, password ) )
             {
-                Response.Write( "Eres un Maestro" );
+                Session["Usuario"] = usuario;
+                Response.Redirect( "Maestro.aspx" );
             }
             else if( con.LoginAlumno( usuario, password ) )
             {
-                Response.Write( "Eres un alumno" );
+                Session["Usuario"] = usuario;
+                Response.Redirect( "Alumno.aspx" );
             }
             else
             {
 
-                Response.Write( "Error" );
+                Response.Write( "<center>Error<br/>No coincide su usuario y contraseña<br/>Intente de nuevo<center><br/>" );
             }
         }
     }

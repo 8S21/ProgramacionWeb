@@ -15,7 +15,6 @@ namespace _00_ProgramacionWeb.Vista
         {
 
         }
-
         protected void Insertar(object sender, EventArgs e)
         {            
             Consultas con = new Consultas();
@@ -24,14 +23,14 @@ namespace _00_ProgramacionWeb.Vista
             String correo = txtCorreo.Text;
             String usuario = txtUsuario.Text;
             String password = txtPassword.Text;
-            if (con.RegistrarMaestro(nombre, apellido, correo, usuario, password))
+            if ( con.RegistrarMaestro( nombre, apellido, correo, usuario, password ) )
             {
-                Response.Write("Exito");
+                Response.Redirect( "Administrador.aspx?e=1");
             }
             else
             { 
 
-                Response.Write( "Error" );
+                Response.Write( "Error, No se puede completar la operación" );
             }
         }
     }

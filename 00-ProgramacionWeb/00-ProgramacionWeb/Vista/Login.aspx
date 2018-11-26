@@ -7,13 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Login</title>
 </head>
-<body>
+<body style="text-align:center; font-size:20px;">
     <form id="form1" runat="server">
-        <div style="text-align:center;">
-            <label>Usuario</label><br>
-            <asp:TextBox ID="txtUsuario" runat="server" type="text" name="usuario" required="required"></asp:TextBox><br>
-            <label>Contraseña</label><br>
-            <asp:TextBox ID="txtPassword" runat="server" type="password" name="password" required="required"></asp:TextBox><br>
+        <div>
+            <label>Usuario</label><br/>
+            <asp:TextBox ID="txtUsuario" runat="server" type="text" name="usuario" required="required"></asp:TextBox><br/>
+            <label>Contraseña</label><br/>
+            <asp:TextBox ID="txtPassword" runat="server" type="password" name="password" required="required"></asp:TextBox><br/>
             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" OnClick="Entrar"></asp:Button>
         </div>
     </form>
