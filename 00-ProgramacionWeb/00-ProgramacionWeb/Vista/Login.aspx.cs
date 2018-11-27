@@ -30,17 +30,17 @@ namespace _00_ProgramacionWeb.Vista
             String password = txtPassword.Text;
             if( con.LoginAdministrador( usuario, password ) )
             {
-                Session["Usuario"] = usuario;
+                Session["UsuarioAdmi"] = usuario;
                 Response.Redirect( "Administrador.aspx" );
             }
             else if( con.LoginMaestro( usuario, password ) )
             {
-                Session["Usuario"] = usuario;
+                Session["UsuarioMaes"] = usuario;
                 Response.Redirect( "Maestro.aspx" );
             }
             else if( con.LoginAlumno( usuario, password ) )
             {
-                Session["Usuario"] = usuario;
+                Session["UsuarioAlum"] = usuario;
                 Response.Redirect( "Alumno.aspx" );
             }
             else

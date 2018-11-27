@@ -9,9 +9,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="text-align:center" >
-            <asp:Label ID="lblUsuario" runat="server" Text="Label" style="font-size: 12px;"></asp:Label><br/>
-            <asp:HyperLink ID="HyperLink1" runat="server"><a href="RegistrarMaestro.aspx">Registrar Maestro</a></asp:HyperLink><br/>
+        <div style="text-align:center; font-size:20px;" >
+            <asp:Label ID="lblUsuario" runat="server" Text="Label"></asp:Label><br/><br/>
+            <asp:Label ID="lblMaestros" runat="server" Text="Maestros Registrados"></asp:Label><br/>
+            <asp:Literal ID="Literal" runat="server"></asp:Literal><br/>
+            <asp:HyperLink ID="HyperLink1" runat="server"><a href="RegistrarMaestro.aspx">Registrar Maestro</a></asp:HyperLink><br/><br/>
             <asp:Button ID="Button1" runat="server" Text="Salir" OnClick="Salir" />
         </div>
     </form>
