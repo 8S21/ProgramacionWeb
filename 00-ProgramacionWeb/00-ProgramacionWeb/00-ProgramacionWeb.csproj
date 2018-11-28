@@ -165,6 +165,7 @@
     <Content Include="Vista\Administrador.aspx" />
     <Content Include="Vista\AgregarPregunta.aspx" />
     <Content Include="Vista\Alumno.aspx" />
+    <Content Include="Vista\Examen.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Maestro.aspx" />
     <Content Include="Vista\MostrarAlumnos.aspx" />
@@ -247,6 +248,13 @@
     </Compile>
     <Compile Include="Vista\Alumno.aspx.designer.cs">
       <DependentUpon>Alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Examen.aspx.cs">
+      <DependentUpon>Examen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\Examen.aspx.designer.cs">
+      <DependentUpon>Examen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

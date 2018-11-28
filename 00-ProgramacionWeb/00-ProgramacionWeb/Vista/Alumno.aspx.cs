@@ -18,14 +18,19 @@ namespace _00_ProgramacionWeb.Vista
             }
             catch (Exception)
             {
-                Response.Redirect("Login.aspx?Mensaje=3");
+                Response.Redirect( "Login.aspx?Mensaje=3" );
             }
         }
 
         protected void Salir(object sender, EventArgs e)
         {
-            Session.Remove("UsuarioAlum");
-            Response.Redirect("Login.aspx");
+            Session.Remove( "UsuarioAlum" );
+            Response.Redirect( "Login.aspx" );
+        }
+
+        protected void Empezar(object sender, EventArgs e)
+        {
+            Response.Redirect( "Examen.aspx" );
         }
     }
 }

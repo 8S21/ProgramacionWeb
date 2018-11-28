@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using _00_ProgramacionWeb.Conexion;
+using _00_ProgramacionWeb.Modelo;
 using System.Data;
 
 namespace _00_ProgramacionWeb.Vista
@@ -30,31 +30,8 @@ namespace _00_ProgramacionWeb.Vista
                     Response.Write( "Se registro Exitosamente" );
                 }
             }
-            Consultas con = new Consultas();
-            String html = "";
-            if( con.MostrarMaestros().Rows.Count > 0 )
-            {
-                html = "<center><table border='1'><thead><tr><td>ID</td><td>Nombre</td><td>Apellido</td><td>Correo</td><td>Usuario</td><td>Contraseña</td></tr></thead>";
-                html += "<tbody>";
-                foreach( DataRow dato in con.MostrarMaestros().Rows )
-                {
-                    html += "<tr>";
-                    html += "<td>" + dato["IdMaestro"].ToString() + "</td>";
-                    html += "<td>" + dato["Nombre"].ToString() + "</td>";
-                    html += "<td>" + dato["Apellido"].ToString() + "</td>";
-                    html += "<td>" + dato["Correo"].ToString() + "</td>";
-                    html += "<td>" + dato["Usuario"].ToString() + "</td>";
-                    html += "<td>" + dato["Password"].ToString() + "</td>";
-                    html += "</tr>";
-                }
-                html += "</tbody>";
-                html += "</table></center>";
-            }
-            else
-            {
-                html += "<center><table><tr><td>No hay registros</td></tr></table></center>";
-            }
-            Literal.Text = html;
+            Modelos m = new Modelos();
+            Literal.Text =m.MostrarMaestros();
 
         }
 

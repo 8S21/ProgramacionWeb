@@ -10,7 +10,8 @@
 <body style="text-align:center; font-size:20px;">
     <form id="form1" runat="server">
         <asp:Label ID="lblUsuario" runat="server" Text="Label"></asp:Label><br/><br/>
-        <asp:Button ID="Button1" runat="server" Text="Salir" OnClick="Salir" />
+        <asp:Button ID="ButtonEmpezar" runat="server" Text="Empezar Examen" OnClick="Empezar" /><br/><br/>
+        <asp:Button ID="ButtonSalir" runat="server" Text="Salir" OnClick="Salir" />
     </form>
 </body>
 </html>

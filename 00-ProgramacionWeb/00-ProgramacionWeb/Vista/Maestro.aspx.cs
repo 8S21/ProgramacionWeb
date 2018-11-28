@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using _00_ProgramacionWeb.Conexion;
+using _00_ProgramacionWeb.Modelo;
 using System.Data;
 
 namespace _00_ProgramacionWeb.Vista
@@ -30,29 +30,8 @@ namespace _00_ProgramacionWeb.Vista
                     Response.Write( "Se registro Exitosamente" );
                 }
             }
-            Consultas con = new Consultas();
-            String html = "";
-            if ( con.MostrarGrupos().Rows.Count > 0 )
-            {
-                html = "<center><table border='1'><thead><tr><td>ID</td><td>Carrera</td><td>Grupo</td><td>Acciones</td></tr></thead>";
-                html += "<tbody>";
-                foreach ( DataRow dato in con.MostrarGrupos().Rows )
-                {
-                    html += "<tr>";
-                    html += "<td>" + dato["IdGrupo"].ToString() + "</td>";
-                    html += "<td>" + dato["Carrera"].ToString() + "</td>";
-                    html += "<td>" + dato["Grupo"].ToString() + "</td>";
-                    html += "<td><a href='MostrarAlumnos.aspx?c=" + dato["Carrera"].ToString() + "&g=" + dato["Grupo"].ToString() + "'>Mostar Alumnos</a></td>";
-                    html += "</tr>";
-                }
-                html += "</tbody>";
-                html += "</table><center>";
-            }
-            else
-            {
-                html += "<center><table><tr><td>No hay grupos</td></tr></table></center>";
-            }
-            Literal.Text = html;
+            Modelos m = new Modelos();
+            Literal.Text = m.MostrarGrupos();
         }
 
         protected void Salir(object sender, EventArgs e)
