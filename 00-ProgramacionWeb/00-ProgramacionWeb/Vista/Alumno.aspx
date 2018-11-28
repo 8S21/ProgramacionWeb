@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 </head>
-<body>
+<body style="text-align:center; font-size:20px;">
     <form id="form1" runat="server">
-        <div>
-        </div>
+        <asp:Label ID="lblUsuario" runat="server" Text="Label"></asp:Label><br/><br/>
+        <asp:Button ID="Button1" runat="server" Text="Salir" OnClick="Salir" />
     </form>
 </body>
 </html>

@@ -11,7 +11,21 @@ namespace _00_ProgramacionWeb.Vista
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                String usuario = Session["UsuarioAlum"].ToString();
+                lblUsuario.Text = "Bienvenido " + usuario;
+            }
+            catch (Exception)
+            {
+                Response.Redirect("Login.aspx?Mensaje=3");
+            }
+        }
 
+        protected void Salir(object sender, EventArgs e)
+        {
+            Session.Remove("UsuarioAlum");
+            Response.Redirect("Login.aspx");
         }
     }
 }

@@ -12,6 +12,7 @@
         Alumnos del Grupo:<br/>
         <asp:Literal ID="Literal" runat="server"></asp:Literal><br/><br/>
         <asp:Button ID="ButtonRegistrarAlumno" runat="server" Text="Registrar Alumno" OnClick="AgregarAlumno" />
+        <asp:Button ID="ButtonInicio" runat="server" Text="Regresar" OnClick="Regresar" />
     </form>
 </body>
 </html>

@@ -65,5 +65,10 @@ namespace _00_ProgramacionWeb.Vista
             String carrera = Request.Params["c"];
             Response.Redirect( "RegistrarAlumno?c=" + carrera + "&g=" + grupo );
         }
+
+        protected void Regresar(object sender, EventArgs e)
+        {
+            Response.Redirect( "Maestro.aspx" );
+        }
     }
 }
