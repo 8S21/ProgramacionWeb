@@ -163,6 +163,7 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vista\Administrador.aspx" />
+    <Content Include="Vista\AgregarPregunta.aspx" />
     <Content Include="Vista\Alumno.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Maestro.aspx" />
@@ -203,6 +204,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Include\Maestro.cs" />
+    <Compile Include="Modelo\Modelos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -231,6 +233,13 @@
     </Compile>
     <Compile Include="Vista\Administrador.aspx.designer.cs">
       <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AgregarPregunta.aspx.cs">
+      <DependentUpon>AgregarPregunta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\AgregarPregunta.aspx.designer.cs">
+      <DependentUpon>AgregarPregunta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Alumno.aspx.cs">
       <DependentUpon>Alumno.aspx</DependentUpon>

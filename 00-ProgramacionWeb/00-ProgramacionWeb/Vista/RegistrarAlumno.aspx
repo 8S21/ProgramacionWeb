@@ -11,11 +11,11 @@
     <form id="form1" runat="server">
         Nuevo Alumno:<br/><br/>
         Matricula<br/>
-        <asp:TextBox ID="txtMatricula" runat="server"></asp:TextBox><br/><br/>
+        <asp:TextBox ID="txtMatricula" runat="server" required="required"></asp:TextBox><br/><br/>
         Nombre:<br/>
-        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox><br/><br/>
+        <asp:TextBox ID="txtNombre" runat="server" required="required"></asp:TextBox><br/><br/>
         Apellido:<br/>
-        <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox><br/><br/>
+        <asp:TextBox ID="txtApellido" runat="server" required="required"></asp:TextBox><br/><br/>
         Carrera:<br/>
         <asp:TextBox ID="txtCarrera" runat="server" ReadOnly="True"></asp:TextBox><br/><br/>
         Grupo:<br/>

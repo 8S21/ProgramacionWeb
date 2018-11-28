@@ -10,7 +10,7 @@
 namespace _00_ProgramacionWeb.Vista {
     
     
-    public partial class MostrarAlumnos {
+    public partial class AgregarPregunta {
         
         /// <summary>
         /// Control form1.
@@ -22,48 +22,66 @@ namespace _00_ProgramacionWeb.Vista {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control LiteralAlumnos.
+        /// Control txtPregunta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralAlumnos;
+        protected global::System.Web.UI.WebControls.TextBox txtPregunta;
         
         /// <summary>
-        /// Control ButtonRegistrarAlumno.
+        /// Control txtRespuesta1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonRegistrarAlumno;
+        protected global::System.Web.UI.WebControls.TextBox txtRespuesta1;
         
         /// <summary>
-        /// Control LiteralPreguntas.
+        /// Control txtRespuesta2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LiteralPreguntas;
+        protected global::System.Web.UI.WebControls.TextBox txtRespuesta2;
         
         /// <summary>
-        /// Control ButtonAgregarPreguntas.
+        /// Control txtRespuesta3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonAgregarPreguntas;
+        protected global::System.Web.UI.WebControls.TextBox txtRespuesta3;
         
         /// <summary>
-        /// Control ButtonInicio.
+        /// Control txtRespuesta4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonInicio;
+        protected global::System.Web.UI.WebControls.TextBox txtRespuesta4;
+        
+        /// <summary>
+        /// Control RespuestaCorrecta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList RespuestaCorrecta;
+        
+        /// <summary>
+        /// Control ButtonAgregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonAgregar;
     }
 }

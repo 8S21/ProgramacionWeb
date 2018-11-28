@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using _00_ProgramacionWeb.Modelo;
 using _00_ProgramacionWeb.Conexion;
 using System.Data;
 
@@ -19,44 +20,23 @@ namespace _00_ProgramacionWeb.Vista
             }
             catch (Exception)
             {
-                Response.Redirect("Login.aspx?Mensaje=2");
+                Response.Redirect( "Login.aspx?Mensaje=2" );
             }
-            if (Request.Params["e"] != null)
+            if ( Request.Params["e"] != null )
             {
                 String mensaje = Request.Params["e"];
-                if (mensaje == "1")
+                if ( mensaje == "1" )
                 {
-                    Response.Write("Se registro Exitosamente");
+                    Response.Write( "Se registro Exitosamente" );
                 }
             }
 
             Consultas con = new Consultas();
+            Modelos m = new Modelos();
             String grupo = Request.Params["g"];
-            String html = "";
-            if ( con.MostrarAlumnosGrupo( grupo ).Rows.Count > 0 )
-            {
-                html = "<center><table border='1'><thead><tr><td>ID</td><td>Matricula</td><td>Nombre</td><td>Apellido</td><td>Carrera</td><td>Grupo</td><td>Calificación</td></tr></thead>";
-                html += "<tbody>";
-                foreach( DataRow dato in con.MostrarAlumnosGrupo( grupo ).Rows )
-                {
-                    html += "<tr>";
-                    html += "<td>" + dato["IdAlumno"].ToString() + "</td>";
-                    html += "<td>" + dato["Matricula"].ToString() + "</td>";
-                    html += "<td>" + dato["Nombre"].ToString() + "</td>";
-                    html += "<td>" + dato["Apellido"].ToString() + "</td>";
-                    html += "<td>" + dato["Carrera"].ToString() + "</td>";
-                    html += "<td>" + dato["Grupo"].ToString() + "</td>";
-                    html += "<td>" + dato["Calificacion"].ToString() + "</td>";
-                    html += "</tr>";
-                }
-                html += "</tbody>";
-                html += "</table></center>";
-            }
-            else
-            {
-                html += "<center><table><tr><td>No hay alumnos en este grupo</td></tr></table></center>";
-            }
-            Literal.Text = html;
+            
+            LiteralAlumnos.Text = m.MostrarAlumnosGrupo( grupo );
+            LiteralPreguntas.Text = m.MostrarExamenes( grupo );
         }
 
         protected void AgregarAlumno(object sender, EventArgs e)
@@ -69,6 +49,12 @@ namespace _00_ProgramacionWeb.Vista
         protected void Regresar(object sender, EventArgs e)
         {
             Response.Redirect( "Maestro.aspx" );
+        }
+
+        protected void AgregarPreguntas(object sender, EventArgs e)
+        {
+            String grupo = Request.Params["g"];
+            Response.Redirect( "AgregarPregunta.aspx?g=" + grupo );
         }
     }
 }

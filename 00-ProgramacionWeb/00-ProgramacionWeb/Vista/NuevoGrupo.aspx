@@ -11,9 +11,9 @@
     <form id="form1" runat="server">
         Nuevo Grupo<br/><br/>
         Carrera:<br/>
-        <asp:TextBox ID="txtCarrera" runat="server"></asp:TextBox><br/><br/>
+        <asp:TextBox ID="txtCarrera" runat="server" required="required"></asp:TextBox><br/><br/>
         Grupo:<br/>
-        <asp:TextBox ID="txtGrupo" runat="server"></asp:TextBox><br/><br/>
+        <asp:TextBox ID="txtGrupo" runat="server" required="required"></asp:TextBox><br/><br/>
         <asp:Button ID="ButtonCrear" runat="server" Text="Crear" OnClick="CrearGrupo" />
     </form>
 </body>
