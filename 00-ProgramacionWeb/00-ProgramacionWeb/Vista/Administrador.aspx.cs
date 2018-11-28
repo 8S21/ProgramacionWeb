@@ -48,11 +48,11 @@ namespace _00_ProgramacionWeb.Vista
                     html += "</tr>";
                 }
                 html += "</tbody>";
-                html += "</table>";
+                html += "</table></center>";
             }
             else
             {
-                html += "<table><tr><td>No hay registros</td></tr></table><center>";
+                html += "<center><table><tr><td>No hay registros</td></tr></table></center>";
             }
             Literal.Text = html;
 
@@ -60,7 +60,7 @@ namespace _00_ProgramacionWeb.Vista
 
         protected void Salir(object sender, EventArgs e)
         {
-            Session.Remove( "Usuario" );
+            Session.Remove( "UsuarioAdmi" );
             Response.Redirect( "Login.aspx" );
         }
     }

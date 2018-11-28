@@ -10,7 +10,7 @@
 namespace _00_ProgramacionWeb.Vista {
     
     
-    public partial class Maestro {
+    public partial class MostrarAlumnos {
         
         /// <summary>
         /// Control form1.
@@ -22,24 +22,6 @@ namespace _00_ProgramacionWeb.Vista {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lblMaestro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMaestro;
-        
-        /// <summary>
-        /// Control ButtonCrearGrupo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCrearGrupo;
-        
-        /// <summary>
         /// Control Literal.
         /// </summary>
         /// <remarks>
@@ -49,12 +31,12 @@ namespace _00_ProgramacionWeb.Vista {
         protected global::System.Web.UI.WebControls.Literal Literal;
         
         /// <summary>
-        /// Control ButtonSalir.
+        /// Control ButtonRegistrarAlumno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSalir;
+        protected global::System.Web.UI.WebControls.Button ButtonRegistrarAlumno;
     }
 }

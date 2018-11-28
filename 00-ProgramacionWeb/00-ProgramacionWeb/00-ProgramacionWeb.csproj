@@ -166,6 +166,9 @@
     <Content Include="Vista\Alumno.aspx" />
     <Content Include="Vista\Login.aspx" />
     <Content Include="Vista\Maestro.aspx" />
+    <Content Include="Vista\MostrarAlumnos.aspx" />
+    <Content Include="Vista\NuevoGrupo.aspx" />
+    <Content Include="Vista\RegistrarAlumno.aspx" />
     <Content Include="Vista\RegistrarMaestro.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -249,6 +252,27 @@
     </Compile>
     <Compile Include="Vista\Maestro.aspx.designer.cs">
       <DependentUpon>Maestro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\MostrarAlumnos.aspx.cs">
+      <DependentUpon>MostrarAlumnos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\MostrarAlumnos.aspx.designer.cs">
+      <DependentUpon>MostrarAlumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\NuevoGrupo.aspx.cs">
+      <DependentUpon>NuevoGrupo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\NuevoGrupo.aspx.designer.cs">
+      <DependentUpon>NuevoGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\RegistrarAlumno.aspx.cs">
+      <DependentUpon>RegistrarAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\RegistrarAlumno.aspx.designer.cs">
+      <DependentUpon>RegistrarAlumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\RegistrarMaestro.aspx.cs">
       <DependentUpon>RegistrarMaestro.aspx</DependentUpon>

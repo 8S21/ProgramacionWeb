@@ -18,7 +18,15 @@ namespace _00_ProgramacionWeb.Vista
                 String mensaje = Request.Params["Mensaje"];
                 if( mensaje == "1" )
                 {
-                    Response.Write("Debes de Iniciar Sesión");
+                    Response.Write( "Inicia Sesión como Administrador" );
+                }
+                else if( mensaje == "2" )
+                {
+                    Response.Write( "Inicia Sesión como Maestro" );
+                }
+                else if( mensaje == "3" )
+                {
+                    Response.Write( "Inicia Sesión como alumno" );
                 }
             }
         }
@@ -28,6 +36,7 @@ namespace _00_ProgramacionWeb.Vista
             Consultas con = new Consultas();
             String usuario = txtUsuario.Text;
             String password = txtPassword.Text;
+            int matricula = Convert.ToInt32( txtPassword.Text );
             if( con.LoginAdministrador( usuario, password ) )
             {
                 Session["UsuarioAdmi"] = usuario;
@@ -38,7 +47,7 @@ namespace _00_ProgramacionWeb.Vista
                 Session["UsuarioMaes"] = usuario;
                 Response.Redirect( "Maestro.aspx" );
             }
-            else if( con.LoginAlumno( usuario, password ) )
+            else if( con.LoginAlumno( usuario, matricula ) )
             {
                 Session["UsuarioAlum"] = usuario;
                 Response.Redirect( "Alumno.aspx" );

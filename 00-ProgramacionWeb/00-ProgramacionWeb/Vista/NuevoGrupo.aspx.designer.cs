@@ -10,7 +10,7 @@
 namespace _00_ProgramacionWeb.Vista {
     
     
-    public partial class Maestro {
+    public partial class NuevoGrupo {
         
         /// <summary>
         /// Control form1.
@@ -22,39 +22,30 @@ namespace _00_ProgramacionWeb.Vista {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lblMaestro.
+        /// Control txtCarrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMaestro;
+        protected global::System.Web.UI.WebControls.TextBox txtCarrera;
         
         /// <summary>
-        /// Control ButtonCrearGrupo.
+        /// Control txtGrupo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonCrearGrupo;
+        protected global::System.Web.UI.WebControls.TextBox txtGrupo;
         
         /// <summary>
-        /// Control Literal.
+        /// Control ButtonCrear.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal Literal;
-        
-        /// <summary>
-        /// Control ButtonSalir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSalir;
+        protected global::System.Web.UI.WebControls.Button ButtonCrear;
     }
 }
