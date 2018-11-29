@@ -14,7 +14,7 @@ namespace _00_ProgramacionWeb.Include
         private String usuario;
         private String password;
 
-        public Maestro( int idMaestro, String nombre, String apellido, String correo, String usuario, String password )
+        public Maestro(  int idMaestro, String nombre, String apellido, String correo, String usuario, String password )
         {
             this.idMaestro = idMaestro;
             this.nombre = nombre;
