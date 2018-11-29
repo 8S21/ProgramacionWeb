@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using _00_ProgramacionWeb.Modelo;
 
 namespace _00_ProgramacionWeb.Vista
 {
@@ -20,6 +21,9 @@ namespace _00_ProgramacionWeb.Vista
             {
                 Response.Redirect( "Login.aspx?Mensaje=3" );
             }
+            int matricula = Convert.ToInt32( Session["Matricula"].ToString() );
+            Modelos m = new Modelos();
+            Literal.Text = m.MostrarDatosAlumno( matricula );
         }
 
         protected void Salir(object sender, EventArgs e)
@@ -30,7 +34,20 @@ namespace _00_ProgramacionWeb.Vista
 
         protected void Empezar(object sender, EventArgs e)
         {
-            Response.Redirect( "Examen.aspx" );
+            int matricula = Convert.ToInt32( Session["Matricula"].ToString() );
+            Modelos m = new Modelos();
+            string calificacion = m.VerificarCalificacion( matricula );
+            if( calificacion.Length == 0 )
+            {
+                string grupo = m.ObtenerGrupo(matricula);
+                int respuestasCorrectas = 0;
+                Session["RespuestasCorrectas"] = respuestasCorrectas;
+                Response.Redirect("Examen.aspx?g=" + grupo + "&p=0");
+            }
+            else
+            {
+                Response.Write( "Ya realizaste tu examen" );
+            }
         }
     }
 }

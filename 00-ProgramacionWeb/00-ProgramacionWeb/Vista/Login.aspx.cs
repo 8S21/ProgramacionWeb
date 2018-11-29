@@ -36,26 +36,34 @@ namespace _00_ProgramacionWeb.Vista
             Consultas con = new Consultas();
             String usuario = txtUsuario.Text;
             String password = txtPassword.Text;
-            int matricula = Convert.ToInt32( txtPassword.Text );
-            if( con.LoginAdministrador( usuario, password ) )
+            try
             {
-                Session["UsuarioAdmi"] = usuario;
-                Response.Redirect( "Administrador.aspx" );
-            }
-            else if( con.LoginMaestro( usuario, password ) )
-            {
-                Session["UsuarioMaes"] = usuario;
-                Response.Redirect( "Maestro.aspx" );
-            }
-            else if( con.LoginAlumno( usuario, matricula ) )
-            {
-                Session["UsuarioAlum"] = usuario;
-                Response.Redirect( "Alumno.aspx" );
-            }
-            else
-            {
+                int matricula = Convert.ToInt32(txtPassword.Text);
+                if (con.LoginAdministrador(usuario, password))
+                {
+                    Session["UsuarioAdmi"] = usuario;
+                    Response.Redirect("Administrador.aspx");
+                }
+                else if (con.LoginMaestro(usuario, password))
+                {
+                    Session["UsuarioMaes"] = usuario;
+                    Response.Redirect("Maestro.aspx");
+                }
+                else if (con.LoginAlumno(usuario, matricula))
+                {
+                    Session["UsuarioAlum"] = usuario;
+                    Session["Matricula"] = matricula;
+                    Response.Redirect("Alumno.aspx");
+                }
+                else
+                {
 
-                Response.Write( "<center>Error<br/>No coincide su usuario y contraseña<br/>Intente de nuevo<center><br/>" );
+                    Response.Write("<center>Error<br/>No coincide su usuario y contraseña<br/>Intente de nuevo<center><br/>");
+                }
+            }
+            catch( Exception )
+            {
+                Response.Write("<center>Error<br/>No coincide su usuario y contraseña<br/>Intente de nuevo<center><br/>");
             }
         }
     }

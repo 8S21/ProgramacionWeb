@@ -10,12 +10,12 @@
 <body style="text-align:center; font-size:20px; margin-top:200px;">
     <form id="form1" runat="server">
 
-        1.-<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><br/><br/>
-        1.-<asp:RadioButton ID="RadioButton1" runat="server" style="margin-right:50px"/>
-        2.-<asp:RadioButton ID="RadioButton2" runat="server" style="margin-right:50px"/>
-        3.-<asp:RadioButton ID="RadioButton3" runat="server" style="margin-right:50px"/>
-        4.-<asp:RadioButton ID="RadioButton4" runat="server" style="margin-right:50px"/><br/><br/>
-        <asp:Button ID="ButtonSiguiente" runat="server" Text="Siguiente" />
+        1.-<asp:Label ID="lblPregunta" runat="server" Text="Label"></asp:Label><br/><br/>
+        A).-<asp:RadioButton ID="RadioButton1" runat="server" GroupName="RadioGrup" style="margin-right:50px"/>
+        B).-<asp:RadioButton ID="RadioButton2" runat="server" GroupName="RadioGrup" style="margin-right:50px"/>
+        C).-<asp:RadioButton ID="RadioButton3" runat="server" GroupName="RadioGrup" style="margin-right:50px" OnCheckedChanged="Click"/>
+        D).-<asp:RadioButton ID="RadioButton4" runat="server" GroupName="RadioGrup" style="margin-right:50px"/><br/><br/>
+        <asp:Button ID="ButtonSiguiente" runat="server" Text="Siguiente" OnClick="Siguiente" />
 
     </form>
 </body>

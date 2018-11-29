@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Collections;
 using _00_ProgramacionWeb.Conexion;
+using _00_ProgramacionWeb.Include;
 using System.Data;
 
 namespace _00_ProgramacionWeb.Modelo
@@ -36,7 +37,7 @@ namespace _00_ProgramacionWeb.Modelo
             }
             else
             {
-                html += "<center><table><tr><td>No hay alumnos en este grupo</td></tr></table></center>";
+                html += "<center><table><tr><td>No hay preguntas para este grupo</td></tr></table></center>";
             }
             return html;
         }
@@ -122,6 +123,69 @@ namespace _00_ProgramacionWeb.Modelo
                 html += "<center><table><tr><td>No hay registros</td></tr></table></center>";
             }
             return html;
+        }
+        public string MostrarDatosAlumno( int matricula )
+        {
+            Consultas con = new Consultas();
+            string html = "";
+            if( con.MostarDatosAlumno( matricula ).Rows.Count > 0 )
+            {
+                html = "<center><table border='1'><thead><tr><td>Matricula</td><td>Nombre</td><td>Apellido</td><td>Carrera</td><td>Grupo</td><td>Calificación</td></tr></thead>";
+                html += "<tbody>";
+                foreach( DataRow dato in con.MostarDatosAlumno( matricula ).Rows )
+                {
+                    html += "<tr>";
+                    html += "<td>" + dato["Matricula"].ToString() + "</td>";
+                    html += "<td>" + dato["Nombre"].ToString() + "</td>";
+                    html += "<td>" + dato["Apellido"].ToString() + "</td>";
+                    html += "<td>" + dato["Carrera"].ToString() + "</td>";
+                    html += "<td>" + dato["Grupo"].ToString() + "</td>";
+                    html += "<td>" + dato["Calificacion"].ToString() + "</td>";
+                    html += "</tr>";
+                }
+                html += "</tbody>";
+                html += "</table></center>";
+            }
+            return html;
+        }
+        public string ObtenerGrupo( int matricula )
+        {
+            Consultas con = new Consultas();
+            string grupo = "";
+            foreach( DataRow dato in con.MostarDatosAlumno( matricula ).Rows )
+            {
+                grupo = dato["Grupo"].ToString();
+            }
+            return grupo;
+        }
+        public string VerificarCalificacion( int matricula )
+        {
+            Consultas con = new Consultas();
+            string calificacion = "";
+            foreach( DataRow dato in con.MostarDatosAlumno( matricula ).Rows )
+            {
+                calificacion = dato["Calificacion"].ToString();
+            }
+            return calificacion;
+        }
+        public ArrayList MostrarPreguntas( string grupo )
+        {
+            ArrayList preguntas = new ArrayList();
+            Consultas con = new Consultas();
+            if( con.MostrarPreguntas( grupo ).Rows.Count > 0 )
+            {
+                foreach( DataRow dato in con.MostrarPreguntas( grupo ).Rows )
+                {
+                    string pregunta = dato["Pregunta"].ToString();
+                    string respuesta1 = dato["Respuesta1"].ToString();
+                    string respuesta2 = dato["Respuesta2"].ToString();
+                    string respuesta3 = dato["Respuesta3"].ToString();
+                    string respuesta4 = dato["Respuesta4"].ToString();
+                    int correcta = Convert.ToInt32( dato["RespuestaCorrecta"].ToString() );
+                    preguntas.Add( new Preguntas( pregunta, respuesta1, respuesta2, respuesta3, respuesta4, correcta ) );
+                }
+            }
+            return preguntas;
         }
     }
 }

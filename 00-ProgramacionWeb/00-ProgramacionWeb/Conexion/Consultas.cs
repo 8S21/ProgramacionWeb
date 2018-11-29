@@ -117,7 +117,7 @@ namespace _00_ProgramacionWeb.Conexion
                 com.Parameters.AddWithValue("@usuario", usuario);
                 com.Parameters.AddWithValue("@password", password);
                 int resultado = com.ExecuteNonQuery();
-                if (resultado == 0)
+                if ( resultado == 0 )
                 {
                     return false;
                 }
@@ -227,6 +227,34 @@ namespace _00_ProgramacionWeb.Conexion
                 conexion.Close();
             }
         }
+        public Boolean ResgistrarCalificacion( int matricula, double calificacion )
+        {
+            try
+            {
+                conexion.Open();
+                string consulta = "update alumno set Calificacion = @calificacion where Matricula = @matricula";
+                MySqlCommand com = new MySqlCommand( consulta, conexion );
+                com.Parameters.AddWithValue( "@calificacion", calificacion );
+                com.Parameters.AddWithValue( "@matricula", matricula );
+                int resultado = com.ExecuteNonQuery();
+                if( resultado == 0 )
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            catch( MySqlException )
+            {
+                return false;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
         public DataTable MostrarMaestros()
         {
             DataTable dt;
@@ -293,6 +321,28 @@ namespace _00_ProgramacionWeb.Conexion
                 conexion.Close();
             }
         }
+        public DataTable MostarDatosAlumno( int matricula )
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                conexion.Open();
+                string consulta = "select * from alumno where Matricula = @matricula";
+                MySqlCommand com = new MySqlCommand( consulta, conexion );
+                com.Parameters.AddWithValue( "@matricula", matricula );
+                MySqlDataAdapter adapter = new MySqlDataAdapter( com );
+                adapter.Fill( dt );
+                return dt;
+            }
+            catch( MySqlException )
+            {
+                return dt;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
         public DataTable MostrarPreguntas( String grupo )
         {
             DataTable dt = new DataTable();
@@ -314,6 +364,6 @@ namespace _00_ProgramacionWeb.Conexion
             {
                 conexion.Close();
             }
-        }
+        }        
     }
 }
