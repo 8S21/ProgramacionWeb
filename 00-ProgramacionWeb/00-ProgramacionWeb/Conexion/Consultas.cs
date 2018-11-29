@@ -20,7 +20,7 @@ namespace _00_ProgramacionWeb.Conexion
         {
             conexion = new MySqlConnection(cadena);
         }
-        public Boolean LoginAdministrador(String usuario, String password)
+        public Boolean  LoginAdministrador(String usuario, String password)
         {
             try
             {
