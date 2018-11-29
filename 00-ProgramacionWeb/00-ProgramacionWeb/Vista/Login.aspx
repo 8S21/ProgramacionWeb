@@ -10,9 +10,9 @@
 <body style="text-align:center; font-size:20px;">
     <form id="form1" runat="server">
         <div>
-            <label>Usuario</label><br/>
+            <label>Usuario:</label><br/>
             <asp:TextBox ID="txtUsuario" runat="server" type="text" name="usuario" required="required"></asp:TextBox><br/>
-            <label>Contraseña</label><br/>
+            <label>Contraseña:</label><br/>
             <asp:TextBox ID="txtPassword" runat="server" type="password" name="password" required="required"></asp:TextBox><br/>
             <asp:Button ID="Button1" runat="server" Text="Entrar" type="submit" OnClick="Entrar"></asp:Button><br/>    
         </div>

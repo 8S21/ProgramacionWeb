@@ -10,7 +10,7 @@
 <body style="text-align:center; font-size:20px">
     <form id="form1" runat="server">
         Nuevo Alumno:<br/><br/>
-        Matricula<br/>
+        Matricula:<br/>
         <asp:TextBox ID="txtMatricula" runat="server" required="required"></asp:TextBox><br/><br/>
         Nombre:<br/>
         <asp:TextBox ID="txtNombre" runat="server" required="required"></asp:TextBox><br/><br/>
